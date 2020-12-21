@@ -1,0 +1,75 @@
+@import '../abstracts/variables';
+@import "../base/utils";
+
+.black .active a,
+.black .active a:hover {
+  background-color: black;
+}
+
+.nav-pills .pill-1 .nav-link:not(.active) {
+  background-color: black;
+}
+
+.nav-pills .pill-1 .nav-link {
+  background-color: black;
+  color: white;
+}
+
+.btn-label {
+  position: relative;
+  left: -3px;
+  display: inline-block;
+  margin: -2px 0 1px;
+}
+
+.btn-labeled {padding-top: 0;padding-bottom: 0;}
+.btn { margin-bottom:10px; }
+
+
+
+
+#y-input {
+  max-width: 26.7rem
+}
+
+.r-button {
+  width: 5.128rem;
+  margin: 0.1rem;
+
+  &.is-valid {
+    border-color: var(--green);
+  }
+
+  &.is-invalid {
+    border-color: var(--red);
+  }
+}
+
+#x-input {
+  &.is-valid {
+    color: var(--green);
+  }
+
+  &.is-invalid {
+    color: var(--red);
+  }
+}
+
+
+
+.ui-slider {
+  margin-top: 20px;
+  height: 7px;
+  position: relative;
+  border: none;
+  background: #e9e9e9;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background: #6c757d;
+  border-radius: 25px;
+  outline: none;
+  border: 2px solid #fff;
+  position: absolute;
+  top: -8px;
+}
