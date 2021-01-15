@@ -120,8 +120,7 @@
                             <h:commandButton value="Clear form" styleClass="btn m-1 btn-secondary clear-from-button"
                                              type="button"/>
                             <h:commandButton value="Clear table" styleClass="btn m-1 btn-secondary"
-                                             type="button" action="#{controller.deleteTable}">
-                                <f:ajax execute="@form" render="point-table"/>
+                                             type="submit" action="#{controller.deleteTable}">
                             </h:commandButton>
                         </div>
                     </h:form>
@@ -135,41 +134,39 @@
 
         <div class="">
             <div class="mt-md-5">
-                <div style="height:600px;overflow-y:scroll; background: lightsteelblue" id="result" class="custom_scrollbar">
+                <div style="height:550px;overflow-y:scroll; background: lightsteelblue" id="result" class="custom_scrollbar">
                     <h4 class="mb-4 text-center">Results table</h4>
-                    <h:dataTable var="point" value="#{controller.items}" styleClass="table table-hover text-center"
+                    <p:dataTable var="point" value="#{controller.items}" styleClass="table-hover text-center table-content"
                                  id="point-table">
-                        <h:column>
-                            <f:facet name="header">X value</f:facet>
-                            #{point.x}
-                        </h:column>
+                        <p:column sortBy="#{point.x}" headerText="X">
+                            <h:outputText value="#{point.x}"/>
+                        </p:column>
 
-                        <h:column>
-                            <f:facet name="header">Y value</f:facet>
-                            #{point.y}
-                        </h:column>
+                        <p:column sortBy="#{point.y}" headerText="Y">
+                            <h:outputText value="#{point.y}"/>
 
-                        <h:column>
-                            <f:facet name="header">R value</f:facet>
-                            #{point.r}
-                        </h:column>
+                        </p:column>
+                        <p:column sortBy="#{point.r}" headerText="R">
+                            <h:outputText value="#{point.r}"/>
+                        </p:column>
 
-                        <h:column>
-                            <f:facet name="header">Result</f:facet>
-                            #{point.hit}
-                        </h:column>
-
-                        <h:column>
-                            <f:facet name="header">Execution time</f:facet>
+                        <p:column sortBy="#{point.time}" headerText="Execution time">
                             <h:outputText value="#{point.time}">
                                 <f:convertNumber pattern="#.#####"/>
                             </h:outputText>
-                        </h:column>
-                    </h:dataTable>
+                        </p:column>
+
+                        <p:column sortBy="#{point.hit}" headerText="Result">
+                            <h:outputText value="#{point.hit}"/>
+                        </p:column>
+
+
+                    </p:dataTable>
                 </div>
             </div>
         </div>
     <ui:include src="template/footer.xhtml"/>
     <h:outputScript library="js" name="main.js"/>
+    <h:outputScript library="js" name="util.js"/>
 </h:body>
 </html>

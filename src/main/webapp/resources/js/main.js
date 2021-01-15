@@ -321,6 +321,7 @@ $(() => {
     }));
 
 
+
     $('.clear-from-button').click(() => {
         $xSlider.setValue(0);
         $xSelected.text(0);

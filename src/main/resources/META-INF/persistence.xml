@@ -15,7 +15,7 @@
             <property name="hibernate.connection.url" value="jdbc:oracle:thin:@localhost:1521:orbis"/>
             <property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver"/>
             <property name="hibernate.connection.username" value="s282315"/>
-            <property name="hibernate.connection.password" value="idw479"/>
+            <property name="hibernate.connection.password" value=""/>
         </properties>
     </persistence-unit>
 </persistence>
